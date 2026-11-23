@@ -47,7 +47,7 @@ class BackgroundService {
 	 */
 	public const BACKGROUND_COLOR = 'color';
 
-	public const DEFAULT_BACKGROUND_IMAGE = 'jo-myoung-hee-fluid.webp';
+	public const DEFAULT_BACKGROUND_IMAGE = 'officestudio-cloud.jpg';
 
 	/**
 	 * 'attribution': Name, artist and license
@@ -57,6 +57,14 @@ class BackgroundService {
 	 * 'primary_color': Recommended primary color for this theme / image
 	 */
 	public const SHIPPED_BACKGROUNDS = [
+		'officestudio-cloud.jpg' => [
+			'attribution' => 'OfficeStudio Cloud (OfficeStudio Cloud contributors, AGPL-3.0-or-later)',
+			'description' => 'Deep navy and blue atmospheric cloud horizon',
+			'attribution_url' => 'https://github.com/FintechASI/OfficeStudio-Cloud',
+			'dark_variant' => 'officestudio-cloud-dark.jpg',
+			'background_color' => self::DEFAULT_BACKGROUND_COLOR,
+			'primary_color' => self::DEFAULT_COLOR,
+		],
 		'jo-myoung-hee-fluid.webp' => [
 			'attribution' => 'Fluid (Jo Myoung Hee - Nextcloud GmbH, CC-BY-SA-4.0)',
 			'description' => 'Abstract background picture of blue and white fluids',

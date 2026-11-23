@@ -1,13 +1,20 @@
 /*!
  * SPDX-FileCopyrightText: 2020 Nextcloud GmbH and Nextcloud contributors
+ * SPDX-FileCopyrightText: 2026 OfficeStudio Cloud contributors
  * SPDX-License-Identifier: AGPL-3.0-or-later
  */
-#header {
-	background: transparent !important;
-	--color-header: rgba(24, 24, 24, 1);
 
-	#body-user.dashboard--dark & {
-		--color-header: rgba(255, 255, 255, 1);
+#header {
+	background: linear-gradient(90deg, rgba(0, 27, 58, 0.86) 0%, rgba(11, 61, 107, 0.78) 100%) !important;
+	-webkit-backdrop-filter: blur(14px);
+	backdrop-filter: blur(14px);
+	border-bottom: 1px solid rgba(40, 160, 232, 0.24);
+	box-shadow: 0 2px 14px rgba(0, 27, 58, 0.18);
+	--color-header: rgba(0, 27, 58, 0.96);
+
+	#body-user.dashboard--scrolled & {
+		background: linear-gradient(90deg, rgba(0, 27, 58, 0.96) 0%, rgba(11, 61, 107, 0.94) 100%) !important;
+		border-bottom-color: rgba(40, 160, 232, 0.36);
 	}
 
 	// Show gradient below navigation for visibility of icons when scrolled
@@ -21,6 +28,7 @@
 		top: 0;
 		margin-top: -70px;
 		transition: margin-top var(--animation-slow);
+		pointer-events: none;
 
 		#body-user.dashboard--scrolled & {
 			margin-top: 0;
@@ -48,4 +56,108 @@
 #appmenu li:hover a.active::before,
 #appmenu li a:focus::before {
 	display: none !important;
+}
+
+/* OfficeStudio Cloud Dashboard Identity */
+#app-dashboard {
+	padding-top: calc(var(--header-height) + 18px);
+
+	> h2 {
+		color: #FFFFFF;
+		font-weight: 700;
+		letter-spacing: -0.02em;
+		text-shadow: 0 2px 18px rgba(0, 27, 58, 0.42);
+	}
+
+	.statuses .action-item__menutoggle,
+	.statuses button {
+		background-color: rgba(255, 255, 255, 0.94) !important;
+		color: #001B3A !important;
+		border: 1px solid rgba(40, 160, 232, 0.3);
+		border-radius: 999px;
+		box-shadow: 0 6px 18px rgba(0, 27, 58, 0.16);
+
+		&:hover,
+		&:focus-visible {
+			background-color: #EAF5FE !important;
+			border-color: #28A0E8;
+		}
+	}
+
+	.panels .panel {
+		background-color: rgba(255, 255, 255, 0.97);
+		border: 1px solid rgba(40, 160, 232, 0.22);
+		border-radius: 16px;
+		box-shadow: 0 14px 36px rgba(0, 27, 58, 0.22);
+		overflow: hidden;
+
+		> .panel--header {
+			background: linear-gradient(180deg, #F5FAFF 0%, #FFFFFF 100%);
+			border-bottom: 1px solid #E2EEF9;
+			margin-bottom: 12px;
+
+			> h2 {
+				color: #001B3A;
+			}
+		}
+	}
+
+	.footer .button-vue,
+	.footer button {
+		background-color: rgba(255, 255, 255, 0.95) !important;
+		color: #001B3A !important;
+		border: 1px solid rgba(40, 160, 232, 0.35);
+		border-radius: 999px;
+		box-shadow: 0 6px 20px rgba(0, 27, 58, 0.2);
+		font-weight: 600;
+
+		&:hover,
+		&:focus-visible {
+			background-color: #EAF5FE !important;
+			border-color: #28A0E8;
+		}
+	}
+}
+
+#body-user[data-theme-dark] #app-dashboard {
+	.statuses .action-item__menutoggle,
+	.statuses button {
+		background-color: rgba(9, 30, 56, 0.92) !important;
+		color: #EBF4FF !important;
+		border-color: rgba(40, 160, 232, 0.35);
+
+		&:hover,
+		&:focus-visible {
+			background-color: #113158 !important;
+			border-color: #28A0E8;
+		}
+	}
+
+	.panels .panel {
+		background-color: rgba(9, 30, 56, 0.95);
+		border-color: rgba(40, 160, 232, 0.26);
+		box-shadow: 0 16px 40px rgba(0, 10, 24, 0.48);
+
+		> .panel--header {
+			background: linear-gradient(180deg, #0D294B 0%, #091E38 100%);
+			border-bottom-color: #183A61;
+
+			> h2 {
+				color: #F2F8FF;
+			}
+		}
+	}
+
+	.footer .button-vue,
+	.footer button {
+		background-color: rgba(9, 30, 56, 0.94) !important;
+		color: #F2F8FF !important;
+		border-color: rgba(40, 160, 232, 0.38);
+
+		&:hover,
+		&:focus-visible {
+			background-color: #113158 !important;
+			border-color: #28A0E8;
+		}
+	}
 }

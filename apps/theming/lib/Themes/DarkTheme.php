@@ -100,10 +100,10 @@ class DarkTheme extends DefaultTheme implements ITheme {
 				'--color-border-maxcontrast' => $this->util->lighten($colorMainBackground, 40),
 
 				// Assistant colors (see default theme)
-				'--color-background-assistant' => '#221D2B',
-				'--color-border-assistant' => 'linear-gradient(125deg, #0C3A65 50%, #6204A5 125%)',
-				'--color-element-assistant' => 'linear-gradient(214deg, #C8A3E8 12%, #007CFF 39%, #C297DD 86%)',
-				'--color-element-assistant-icon' => 'linear-gradient(214deg, #CDACE7 15.28%, #008FDB 39.98%, #A180E0 82.05%)',
+				'--color-background-assistant' => '#0A213D',
+				'--color-border-assistant' => 'linear-gradient(125deg, #28A0E8 40%, #0B3D6B 100%)',
+				'--color-element-assistant' => 'linear-gradient(214deg, #28A0E8 12%, #0B3D6B 65%, #001B3A 100%)',
+				'--color-element-assistant-icon' => 'linear-gradient(214deg, #28A0E8 15%, #0B3D6B 80%)',
 
 				'--color-element-error' => $colorErrorElement,
 				'--color-element-info' => $colorInfoElement,

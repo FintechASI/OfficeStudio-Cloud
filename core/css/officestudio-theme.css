@@ -1,0 +1,484 @@
+/*!
+ * SPDX-FileCopyrightText: 2026 OfficeStudio Cloud contributors
+ * SPDX-License-Identifier: AGPL-3.0-or-later
+ */
+
+/* OfficeStudio Cloud Authenticated Shell, Header, and Dropdown Styles */
+
+:root:has(#body-user),
+:root:has(#body-settings) {
+	--header-height: 50px;
+}
+
+#body-user,
+#body-settings {
+	--osc-navy: #001B3A;
+	--osc-blue: #0B3D6B;
+	--osc-blue-hover: #0E4D87;
+	--osc-accent: #28A0E8;
+	--osc-accent-soft: #E8F4FD;
+	--osc-surface: #FFFFFF;
+	--osc-surface-muted: #F4F8FC;
+	--osc-border: #D9E6F3;
+	--osc-shadow: rgba(0, 27, 58, 0.16);
+}
+
+/* Global Top Header Bar (do not set cascading text color on #header so dropdowns never inherit white text) */
+#body-user #header:not(.header-guest),
+#body-settings #header:not(.header-guest) {
+	height: var(--header-height);
+	background: linear-gradient(90deg, #001B3A 0%, #072B52 55%, #0B3D6B 100%);
+	border-bottom: 1px solid rgba(40, 160, 232, 0.28);
+	box-shadow: 0 2px 12px rgba(0, 27, 58, 0.24);
+	padding-inline: 4px;
+}
+
+#body-user #header:not(.header-guest) #nextcloud,
+#body-settings #header:not(.header-guest) #nextcloud {
+	padding-inline-start: 192px;
+	margin: 0 4px 0 6px;
+	height: calc(var(--header-height) - 4px);
+	min-height: 44px;
+	display: inline-flex;
+	align-items: center;
+	overflow: visible;
+}
+
+#body-user #header:not(.header-guest) #nextcloud .logo,
+#body-settings #header:not(.header-guest) #nextcloud .logo {
+	background-image: var(--image-logoheader, url('../img/logo/logo-header.png')) !important;
+	background-repeat: no-repeat;
+	background-size: contain;
+	background-position: center left;
+	width: 168px;
+	height: 34px;
+	inset-inline-start: 12px;
+	top: 50%;
+	bottom: auto;
+	transform: translateY(-50%);
+	filter: none !important;
+}
+
+/* Header Bar Triggers & App Navigation */
+#body-user #header:not(.header-guest) #appmenu li a,
+#body-settings #header:not(.header-guest) #appmenu li a,
+#body-user #header:not(.header-guest) .header-menu__trigger,
+#body-settings #header:not(.header-guest) .header-menu__trigger {
+	color: rgba(255, 255, 255, 0.94);
+	border-radius: 8px;
+	transition: background-color 140ms ease, color 140ms ease;
+}
+
+#body-user #header:not(.header-guest) #appmenu li a:hover,
+#body-user #header:not(.header-guest) #appmenu li a:focus-visible,
+#body-settings #header:not(.header-guest) #appmenu li a:hover,
+#body-settings #header:not(.header-guest) #appmenu li a:focus-visible,
+#body-user #header:not(.header-guest) .header-menu__trigger:hover,
+#body-user #header:not(.header-guest) .header-menu__trigger:focus-visible,
+#body-settings #header:not(.header-guest) .header-menu__trigger:hover,
+#body-settings #header:not(.header-guest) .header-menu__trigger:focus-visible {
+	background-color: rgba(40, 160, 232, 0.2);
+	color: #FFFFFF;
+}
+
+#body-user #header:not(.header-guest) #appmenu li a.active,
+#body-settings #header:not(.header-guest) #appmenu li a.active {
+	background-color: rgba(40, 160, 232, 0.24);
+	color: #FFFFFF;
+	font-weight: 600;
+}
+
+#body-user #header:not(.header-guest) #appmenu li a.active::after,
+#body-settings #header:not(.header-guest) #appmenu li a.active::after {
+	background-color: #28A0E8;
+}
+
+/* Unified Search Pill */
+#body-user #header:not(.header-guest) .unified-search__form,
+#body-settings #header:not(.header-guest) .unified-search__form,
+#body-user #header:not(.header-guest) #unified-search input,
+#body-settings #header:not(.header-guest) #unified-search input {
+	border-radius: 999px;
+}
+
+#body-user #header:not(.header-guest) #unified-search .header-menu__trigger,
+#body-settings #header:not(.header-guest) #unified-search .header-menu__trigger,
+#body-user #header:not(.header-guest) .unified-search__button,
+#body-settings #header:not(.header-guest) .unified-search__button {
+	background-color: rgba(255, 255, 255, 0.12);
+	border: 1px solid rgba(255, 255, 255, 0.2);
+	color: rgba(255, 255, 255, 0.94);
+	border-radius: 999px;
+}
+
+#body-user #header:not(.header-guest) #unified-search .header-menu__trigger:hover,
+#body-settings #header:not(.header-guest) #unified-search .header-menu__trigger:hover,
+#body-user #header:not(.header-guest) .unified-search__button:hover,
+#body-settings #header:not(.header-guest) .unified-search__button:hover {
+	background-color: rgba(40, 160, 232, 0.22);
+	border-color: rgba(40, 160, 232, 0.55);
+}
+
+#body-user #header:not(.header-guest) #unified-search .header-menu__trigger:focus-visible,
+#body-settings #header:not(.header-guest) #unified-search .header-menu__trigger:focus-visible {
+	outline: 2px solid #28A0E8;
+	outline-offset: 1px;
+}
+
+/* Primary & Secondary Buttons across Authenticated Apps */
+#body-user .button-vue--primary,
+#body-settings .button-vue--primary,
+#body-user button.primary,
+#body-settings button.primary,
+#body-user input.primary,
+#body-settings input.primary {
+	background: linear-gradient(180deg, #1677D5 0%, #0B3D6B 100%) !important;
+	border-color: #0B3D6B !important;
+	color: #FFFFFF !important;
+	box-shadow: 0 3px 10px rgba(0, 27, 58, 0.16);
+	transition: background 140ms ease, box-shadow 140ms ease, transform 100ms ease;
+}
+
+#body-user .button-vue--primary:not(:disabled):hover,
+#body-user .button-vue--primary:not(:disabled):focus-visible,
+#body-settings .button-vue--primary:not(:disabled):hover,
+#body-settings .button-vue--primary:not(:disabled):focus-visible,
+#body-user button.primary:not(:disabled):hover,
+#body-user input.primary:not(:disabled):hover {
+	background: linear-gradient(180deg, #28A0E8 0%, #0E5494 100%) !important;
+	border-color: #0E5494 !important;
+	box-shadow: 0 6px 16px rgba(11, 61, 107, 0.28);
+}
+
+#body-user .button-vue--secondary,
+#body-settings .button-vue--secondary {
+	background-color: #FFFFFF;
+	color: #0B3D6B;
+	border: 1px solid #C5D8EC;
+}
+
+#body-user .button-vue--secondary:not(:disabled):hover,
+#body-settings .button-vue--secondary:not(:disabled):hover {
+	background-color: #EAF5FE;
+	border-color: #28A0E8;
+	color: #001B3A;
+}
+
+/* ============================================================================
+   Dropdowns, Header Menus, Profile Menu, & Action Popovers (Light Mode)
+   ============================================================================ */
+#body-user #header .header-menu__wrapper,
+#body-settings #header .header-menu__wrapper,
+#body-user .v-popper__inner,
+#body-settings .v-popper__inner,
+#body-user .popover,
+#body-settings .popover {
+	--color-main-background: #FFFFFF;
+	--color-main-text: #0B1F3A;
+	--color-text-maxcontrast: #4A647E;
+	--color-background-hover: #EBF5FE;
+	--color-background-dark: #E0F0FD;
+	--color-border: #E2ECF6;
+	--color-border-dark: #D0E0F0;
+	--color-primary-element: #0B3D6B;
+	--color-primary-element-hover: #0E5494;
+	--color-primary-element-text: #FFFFFF;
+	--color-primary-light: #E8F4FD;
+	--color-primary-light-hover: #D8ECFB;
+	--background-invert-if-dark: none;
+
+	background-color: #FFFFFF !important;
+	color: #0B1F3A !important;
+	border: 1px solid #D6E4F2;
+	border-radius: 14px;
+	box-shadow:
+		0 16px 40px rgba(0, 27, 58, 0.16),
+		0 4px 12px rgba(0, 27, 58, 0.08);
+	overflow: hidden;
+}
+
+#body-user .modal-container,
+#body-settings .modal-container {
+	border-radius: 14px;
+	border: 1px solid #D6E4F2;
+	box-shadow: 0 18px 44px rgba(0, 27, 58, 0.2);
+}
+
+/* Top-right Profile Dropdown & Header Menu Content */
+#body-user #header .header-menu__content,
+#body-settings #header .header-menu__content {
+	color: #0B1F3A;
+}
+
+#body-user #header .account-menu__list,
+#body-settings #header .account-menu__list {
+	display: flex;
+	flex-direction: column;
+	padding: 8px !important;
+	min-width: 248px;
+	gap: 2px;
+}
+
+#body-user #header .account-menu__list > li:first-child,
+#body-settings #header .account-menu__list > li:first-child {
+	padding-bottom: 6px;
+	margin-bottom: 4px;
+	border-bottom: 1px solid #E4EEF8;
+}
+
+#body-user #header .account-menu__list > li:has(#logout),
+#body-settings #header .account-menu__list > li:has(#logout) {
+	padding-top: 6px;
+	margin-top: 4px;
+	border-top: 1px solid #E4EEF8;
+}
+
+#body-user #header .header-menu__wrapper .list-item,
+#body-settings #header .header-menu__wrapper .list-item,
+#body-user #header .header-menu__wrapper .list-item__anchor,
+#body-settings #header .header-menu__wrapper .list-item__anchor {
+	border-radius: 10px;
+	color: #0B1F3A !important;
+	transition: background-color 120ms ease, color 120ms ease;
+}
+
+#body-user #header .header-menu__wrapper .list-item-content__name,
+#body-settings #header .header-menu__wrapper .list-item-content__name,
+#body-user .v-popper__inner .list-item-content__name,
+#body-settings .v-popper__inner .list-item-content__name {
+	color: #0B1F3A !important;
+	font-weight: 500;
+}
+
+#body-user #header .header-menu__wrapper .list-item-content__details,
+#body-settings #header .header-menu__wrapper .list-item-content__details,
+#body-user .v-popper__inner .list-item-content__details,
+#body-settings .v-popper__inner .list-item-content__details {
+	color: #4A647E !important;
+	opacity: 1 !important;
+}
+
+#body-user #header .account-menu-entry__icon,
+#body-settings #header .account-menu-entry__icon {
+	filter: none !important;
+	opacity: 0.88;
+}
+
+#body-user #header .header-menu__wrapper svg,
+#body-settings #header .header-menu__wrapper svg,
+#body-user .v-popper__inner svg,
+#body-settings .v-popper__inner svg,
+#body-user .popover svg,
+#body-settings .popover svg {
+	color: #1A4B7C;
+}
+
+#body-user #header .header-menu__wrapper .list-item__anchor:hover,
+#body-user #header .header-menu__wrapper .list-item__anchor:focus-visible,
+#body-settings #header .header-menu__wrapper .list-item__anchor:hover,
+#body-settings #header .header-menu__wrapper .list-item__anchor:focus-visible,
+#body-user #header .header-menu__wrapper .list-item:hover,
+#body-settings #header .header-menu__wrapper .list-item:hover {
+	background-color: #EBF5FE !important;
+	color: #001B3A !important;
+}
+
+#body-user #header .header-menu__wrapper .list-item--active,
+#body-settings #header .header-menu__wrapper .list-item--active,
+#body-user #header .header-menu__wrapper .list-item__anchor.active,
+#body-settings #header .header-menu__wrapper .list-item__anchor.active {
+	background-color: #E0F0FD !important;
+	color: #0B3D6B !important;
+	font-weight: 600;
+}
+
+#body-user #header .header-menu__wrapper .list-item__anchor:hover svg,
+#body-settings #header .header-menu__wrapper .list-item__anchor:hover svg {
+	color: #0B3D6B;
+}
+
+#body-user #header .header-menu__wrapper .button-vue--secondary,
+#body-settings #header .header-menu__wrapper .button-vue--secondary {
+	background-color: #FFFFFF !important;
+	color: #0B3D6B !important;
+	border: 1px solid #C5D8EC !important;
+	border-radius: 8px;
+}
+
+#body-user #header .header-menu__wrapper .button-vue--secondary:hover,
+#body-settings #header .header-menu__wrapper .button-vue--secondary:hover {
+	background-color: #EBF5FE !important;
+	border-color: #28A0E8 !important;
+}
+
+/* Action Menus & Popovers (Files "+ New", Row "...", Breadcrumbs, Statuses) */
+#body-user .v-popper__inner .action-menu,
+#body-settings .v-popper__inner .action-menu,
+#body-user .popover .action-menu,
+#body-settings .popover .action-menu {
+	padding: 6px;
+}
+
+#body-user .action-button,
+#body-settings .action-button,
+#body-user .action-link,
+#body-settings .action-link,
+#body-user .action-text,
+#body-settings .action-text {
+	width: 100%;
+	box-sizing: border-box;
+	border-radius: 10px;
+	color: #0B1F3A !important;
+	font-weight: 500;
+	transition: background-color 120ms ease, color 120ms ease;
+}
+
+#body-user .action-button:hover,
+#body-user .action-button:focus-visible,
+#body-settings .action-button:hover,
+#body-settings .action-button:focus-visible,
+#body-user .action-link:hover,
+#body-user .action-link:focus-visible,
+#body-settings .action-link:hover,
+#body-settings .action-link:focus-visible {
+	background-color: #EBF5FE !important;
+	color: #001B3A !important;
+}
+
+#body-user .action-button:hover svg,
+#body-settings .action-button:hover svg,
+#body-user .action-link:hover svg,
+#body-settings .action-link:hover svg {
+	color: #0B3D6B;
+}
+
+#body-user .action-button--active,
+#body-settings .action-button--active {
+	background-color: #E0F0FD !important;
+	color: #0B3D6B !important;
+	font-weight: 600;
+}
+
+#body-user .action-separator,
+#body-settings .action-separator,
+#body-user .v-popper__inner hr,
+#body-settings .v-popper__inner hr,
+#body-user .popover hr,
+#body-settings .popover hr {
+	border-color: #E4EEF8 !important;
+	background-color: #E4EEF8 !important;
+	margin-block: 4px;
+}
+
+/* Dark Theme Overrides */
+#body-user[data-theme-dark] .button-vue--secondary,
+#body-settings[data-theme-dark] .button-vue--secondary {
+	background-color: #0A213D;
+	color: #EBF4FF;
+	border-color: #1F446E;
+}
+
+#body-user[data-theme-dark] .button-vue--secondary:not(:disabled):hover,
+#body-settings[data-theme-dark] .button-vue--secondary:not(:disabled):hover {
+	background-color: #12335A;
+	border-color: #28A0E8;
+	color: #FFFFFF;
+}
+
+#body-user[data-theme-dark] #header .header-menu__wrapper,
+#body-settings[data-theme-dark] #header .header-menu__wrapper,
+#body-user[data-theme-dark] .v-popper__inner,
+#body-settings[data-theme-dark] .v-popper__inner,
+#body-user[data-theme-dark] .popover,
+#body-settings[data-theme-dark] .popover {
+	--color-main-background: #091E38;
+	--color-main-text: #EBF4FF;
+	--color-text-maxcontrast: #9BB7D4;
+	--color-background-hover: #13345A;
+	--color-background-dark: #194370;
+	--color-border: #1B3E66;
+	--color-border-dark: #254F7D;
+	--color-primary-element: #28A0E8;
+	--color-primary-light: #13345A;
+	--color-primary-light-hover: #194370;
+	--background-invert-if-dark: invert(100%);
+
+	background-color: #091E38 !important;
+	color: #EBF4FF !important;
+	border-color: #1B3E66;
+	box-shadow: 0 18px 44px rgba(0, 10, 24, 0.5);
+}
+
+#body-user[data-theme-dark] .modal-container,
+#body-settings[data-theme-dark] .modal-container {
+	background-color: #091E38;
+	border-color: #1B3E66;
+	box-shadow: 0 18px 44px rgba(0, 10, 24, 0.5);
+}
+
+#body-user[data-theme-dark] #header .account-menu__list > li:first-child,
+#body-settings[data-theme-dark] #header .account-menu__list > li:first-child,
+#body-user[data-theme-dark] #header .account-menu__list > li:has(#logout),
+#body-settings[data-theme-dark] #header .account-menu__list > li:has(#logout) {
+	border-color: #1A3C62;
+}
+
+#body-user[data-theme-dark] #header .header-menu__wrapper .list-item,
+#body-settings[data-theme-dark] #header .header-menu__wrapper .list-item,
+#body-user[data-theme-dark] #header .header-menu__wrapper .list-item__anchor,
+#body-settings[data-theme-dark] #header .header-menu__wrapper .list-item__anchor,
+#body-user[data-theme-dark] #header .header-menu__wrapper .list-item-content__name,
+#body-settings[data-theme-dark] #header .header-menu__wrapper .list-item-content__name,
+#body-user[data-theme-dark] .action-button,
+#body-settings[data-theme-dark] .action-button,
+#body-user[data-theme-dark] .action-link,
+#body-settings[data-theme-dark] .action-link {
+	color: #EBF4FF !important;
+}
+
+#body-user[data-theme-dark] #header .header-menu__wrapper .list-item-content__details,
+#body-settings[data-theme-dark] #header .header-menu__wrapper .list-item-content__details {
+	color: #9BB7D4 !important;
+}
+
+#body-user[data-theme-dark] #header .account-menu-entry__icon,
+#body-settings[data-theme-dark] #header .account-menu-entry__icon {
+	filter: invert(100%) !important;
+}
+
+#body-user[data-theme-dark] #header .header-menu__wrapper svg,
+#body-settings[data-theme-dark] #header .header-menu__wrapper svg,
+#body-user[data-theme-dark] .v-popper__inner svg,
+#body-settings[data-theme-dark] .v-popper__inner svg,
+#body-user[data-theme-dark] .popover svg,
+#body-settings[data-theme-dark] .popover svg {
+	color: #67C1F5;
+}
+
+#body-user[data-theme-dark] #header .header-menu__wrapper .list-item__anchor:hover,
+#body-settings[data-theme-dark] #header .header-menu__wrapper .list-item__anchor:hover,
+#body-user[data-theme-dark] .action-button:hover,
+#body-user[data-theme-dark] .action-button:focus-visible,
+#body-settings[data-theme-dark] .action-button:hover,
+#body-settings[data-theme-dark] .action-button:focus-visible {
+	background-color: #13345A !important;
+	color: #FFFFFF !important;
+}
+
+#body-user[data-theme-dark] #header .header-menu__wrapper .list-item--active,
+#body-settings[data-theme-dark] #header .header-menu__wrapper .list-item--active,
+#body-user[data-theme-dark] .action-button--active,
+#body-settings[data-theme-dark] .action-button--active {
+	background-color: #194370 !important;
+	color: #FFFFFF !important;
+}
+
+#body-user[data-theme-dark] .action-separator,
+#body-settings[data-theme-dark] .action-separator,
+#body-user[data-theme-dark] .v-popper__inner hr,
+#body-settings[data-theme-dark] .v-popper__inner hr,
+#body-user[data-theme-dark] .popover hr,
+#body-settings[data-theme-dark] .popover hr {
+	border-color: #1A3C62 !important;
+	background-color: #1A3C62 !important;
+}

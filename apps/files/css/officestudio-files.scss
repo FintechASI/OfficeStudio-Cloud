@@ -1,0 +1,337 @@
+/*!
+ * SPDX-FileCopyrightText: 2026 OfficeStudio Cloud contributors
+ * SPDX-License-Identifier: AGPL-3.0-or-later
+ */
+
+/* OfficeStudio Cloud File Manager Styles */
+
+#content.app-files {
+	--color-primary-element: #0B3D6B;
+	--color-primary-element-hover: #0E5494;
+	--color-primary-element-text: #FFFFFF;
+	--color-primary-light: #E8F4FD;
+	--color-primary-light-hover: #D8ECFB;
+	--color-primary-light-text: #001B3A;
+}
+
+/* Main Workspace & Container Framing */
+#content.app-files .app-content {
+	background-color: #FFFFFF;
+	border-inline-start: 1px solid #D9E6F3;
+}
+
+/* Left Navigation Sidebar */
+#content.app-files .app-navigation,
+#content.app-files .files-navigation {
+	background-color: #F4F8FC;
+	border-inline-end: 1px solid #D9E6F3;
+}
+
+#content.app-files .files-navigation .input-field__input {
+	background-color: #FFFFFF;
+	border-radius: 10px;
+	box-shadow: inset 0 0 0 1px #C5D8EC;
+}
+
+#content.app-files .files-navigation .input-field__input:focus {
+	box-shadow: inset 0 0 0 2px #28A0E8;
+}
+
+#content.app-files .app-navigation-entry {
+	border-radius: 10px;
+	margin-inline: 6px;
+	width: calc(100% - 12px);
+	transition: background-color 120ms ease, color 120ms ease;
+}
+
+#content.app-files .app-navigation-entry:hover:not(.active),
+#content.app-files .app-navigation-entry > a:hover:not(.active) {
+	background-color: #E6F2FC;
+	color: #001B3A;
+}
+
+#content.app-files .app-navigation-entry.active,
+#content.app-files .app-navigation-entry-link.active {
+	background: linear-gradient(90deg, #0B3D6B 0%, #1567B6 100%) !important;
+	color: #FFFFFF !important;
+	box-shadow: 0 3px 10px rgba(11, 61, 107, 0.22);
+}
+
+#content.app-files .app-navigation-entry.active .app-navigation-entry-icon,
+#content.app-files .app-navigation-entry.active svg {
+	color: #FFFFFF;
+}
+
+#content.app-files .app-navigation-entry__settings {
+	border-top: 1px solid #DDE9F5;
+	padding-top: 6px;
+}
+
+#content.app-files .progress-bar {
+	background-color: #DCEAF7;
+	border-radius: 999px;
+}
+
+#content.app-files .progress-bar__value {
+	background: linear-gradient(90deg, #28A0E8 0%, #0B3D6B 100%);
+	border-radius: 999px;
+}
+
+/* Sticky Toolbar, Upload (+ New) Button, & Breadcrumbs */
+#content.app-files .files-list__header {
+	background-color: #FFFFFF;
+	border-bottom: 1px solid #E1ECF7;
+	padding-block: 10px;
+}
+
+#content.app-files .files-list__header-upload-button .button-vue--primary,
+#content.app-files .files-list__header-upload-button button {
+	background: linear-gradient(180deg, #1677D5 0%, #0B3D6B 100%) !important;
+	border: none !important;
+	color: #FFFFFF !important;
+	border-radius: 10px;
+	font-weight: 600;
+	box-shadow: 0 4px 12px rgba(11, 61, 107, 0.24);
+}
+
+#content.app-files .files-list__header-upload-button .button-vue--primary:hover,
+#content.app-files .files-list__header-upload-button button:hover {
+	background: linear-gradient(180deg, #28A0E8 0%, #0E5494 100%) !important;
+	box-shadow: 0 6px 16px rgba(11, 61, 107, 0.32);
+}
+
+#content.app-files .files-list__breadcrumbs {
+	color: #001B3A;
+}
+
+#content.app-files .files-list__breadcrumbs .breadcrumb__crumb:hover,
+#content.app-files .files-list__breadcrumbs .breadcrumb__crumb:focus-visible {
+	background-color: #E8F3FC;
+	border-radius: 8px;
+}
+
+#content.app-files .files-list__breadcrumbs .breadcrumb__crumb--active,
+#content.app-files .files-list__breadcrumbs .breadcrumb__crumb:last-of-type {
+	color: #001B3A;
+	font-weight: 700;
+}
+
+#content.app-files .files-list__header-grid-button,
+#content.app-files .files-list__header-actions .action-item__menutoggle {
+	border-radius: 8px;
+	color: #0B3D6B;
+}
+
+#content.app-files .files-list__header-grid-button:hover,
+#content.app-files .files-list__header-actions .action-item__menutoggle:hover {
+	background-color: #E8F4FE;
+	color: #001B3A;
+}
+
+/* Filter Chips */
+#content.app-files .files-list__filters .button-vue {
+	border-radius: 999px;
+	border-color: #D4E4F4;
+}
+
+#content.app-files .files-list__filters .button-vue--secondary {
+	background-color: #E8F4FE;
+	border-color: #28A0E8;
+	color: #0B3D6B;
+}
+
+/* Table Header & Selection Bar */
+#content.app-files .files-list__row-head {
+	background-color: #F6FAFE;
+	border-bottom: 1px solid #DFECF7;
+	color: #466380;
+}
+
+#content.app-files .files-list__row-head--selected {
+	background-color: #E6F3FD;
+	color: #001B3A;
+}
+
+#content.app-files .files-list__row-head th button {
+	color: #3D5B78;
+	font-weight: 600;
+}
+
+#content.app-files .files-list__row-head th button:hover {
+	color: #0B3D6B;
+}
+
+/* File & Folder Rows */
+#content.app-files .files-list__row {
+	border-bottom: 1px solid #ECF3FA;
+	transition: background-color 110ms ease;
+}
+
+#content.app-files .files-list__row:hover {
+	background-color: #F1F7FD;
+}
+
+#content.app-files .files-list__row--active {
+	background-color: #E2F1FD;
+}
+
+#content.app-files .files-list__row-name {
+	color: #001B3A;
+	font-weight: 500;
+}
+
+#content.app-files .files-list__row-size,
+#content.app-files .files-list__row-mtime,
+#content.app-files .files-list__row-mime {
+	color: #5A728A;
+}
+
+/* Grid View Tiles */
+#content.app-files .files-list__grid .files-list__row {
+	background-color: #FFFFFF;
+	border: 1px solid #E0ECF7;
+	border-radius: 12px;
+	transition: border-color 140ms ease, box-shadow 140ms ease, background-color 140ms ease;
+}
+
+#content.app-files .files-list__grid .files-list__row:hover {
+	border-color: #28A0E8;
+	background-color: #F5FAFF;
+	box-shadow: 0 6px 18px rgba(11, 61, 107, 0.12);
+}
+
+/* Drag & Drop Banner */
+#content.app-files .files-list__drag-and-drop-notice {
+	background-color: #F0F8FF;
+	border: 2px dashed #28A0E8;
+	border-radius: 12px;
+	color: #0B3D6B;
+}
+
+/* Right Details & Sharing Sidebar */
+#content.app-files .app-sidebar {
+	background-color: #FFFFFF;
+	border-inline-start: 1px solid #D9E6F3;
+}
+
+#content.app-files .app-sidebar-header {
+	background: linear-gradient(180deg, #F6FAFE 0%, #FFFFFF 100%);
+	border-bottom: 1px solid #E2EEF9;
+}
+
+#content.app-files .app-sidebar-tabs__tab {
+	color: #486581;
+}
+
+#content.app-files .app-sidebar-tabs__tab--active {
+	color: #0B3D6B;
+	font-weight: 600;
+	border-bottom-color: #28A0E8;
+}
+
+#content.app-files .sharingTab__share-button {
+	border-radius: 10px;
+}
+
+#content.app-files .sharingTab .sharing-entry,
+#content.app-files .sharingTab .unified-share-entry {
+	background-color: #F6FAFE;
+	border: 1px solid #DCE8F4;
+	border-radius: 10px;
+}
+
+/* Dark Theme Support */
+#body-user[data-theme-dark] #content.app-files {
+	--color-primary-element: #28A0E8;
+	--color-primary-element-hover: #47B2F2;
+	--color-primary-element-text: #001B3A;
+	--color-primary-light: #103259;
+	--color-primary-light-hover: #174273;
+	--color-primary-light-text: #EBF4FF;
+}
+
+#body-user[data-theme-dark] #content.app-files .app-content,
+#body-user[data-theme-dark] #content.app-files .files-list__header,
+#body-user[data-theme-dark] #content.app-files .app-sidebar {
+	background-color: #081B33;
+	border-color: #173659;
+}
+
+#body-user[data-theme-dark] #content.app-files .app-navigation,
+#body-user[data-theme-dark] #content.app-files .files-navigation {
+	background-color: #061529;
+	border-inline-end-color: #173659;
+}
+
+#body-user[data-theme-dark] #content.app-files .files-navigation .input-field__input {
+	background-color: #0A213D;
+	box-shadow: inset 0 0 0 1px #1F446E;
+	color: #EBF4FF;
+}
+
+#body-user[data-theme-dark] #content.app-files .app-navigation-entry:hover:not(.active),
+#body-user[data-theme-dark] #content.app-files .app-navigation-entry > a:hover:not(.active) {
+	background-color: #0F2C4E;
+	color: #FFFFFF;
+}
+
+#body-user[data-theme-dark] #content.app-files .app-navigation-entry.active,
+#body-user[data-theme-dark] #content.app-files .app-navigation-entry-link.active {
+	background: linear-gradient(90deg, #0B3D6B 0%, #1C7BC8 100%) !important;
+	color: #FFFFFF !important;
+}
+
+#body-user[data-theme-dark] #content.app-files .files-list__row-head {
+	background-color: #0B223E;
+	border-bottom-color: #173659;
+	color: #A8C4E0;
+}
+
+#body-user[data-theme-dark] #content.app-files .files-list__row-head--selected {
+	background-color: #103259;
+	color: #FFFFFF;
+}
+
+#body-user[data-theme-dark] #content.app-files .files-list__row {
+	border-bottom-color: #132F50;
+}
+
+#body-user[data-theme-dark] #content.app-files .files-list__row:hover {
+	background-color: #0D2746;
+}
+
+#body-user[data-theme-dark] #content.app-files .files-list__row--active {
+	background-color: #133660;
+}
+
+#body-user[data-theme-dark] #content.app-files .files-list__row-name {
+	color: #F0F7FF;
+}
+
+#body-user[data-theme-dark] #content.app-files .files-list__row-size,
+#body-user[data-theme-dark] #content.app-files .files-list__row-mtime,
+#body-user[data-theme-dark] #content.app-files .files-list__row-mime {
+	color: #9BB7D4;
+}
+
+#body-user[data-theme-dark] #content.app-files .files-list__grid .files-list__row {
+	background-color: #0B223E;
+	border-color: #1A3B62;
+}
+
+#body-user[data-theme-dark] #content.app-files .files-list__grid .files-list__row:hover {
+	border-color: #28A0E8;
+	background-color: #103056;
+}
+
+#body-user[data-theme-dark] #content.app-files .app-sidebar-header {
+	background: linear-gradient(180deg, #0C2645 0%, #081B33 100%);
+	border-bottom-color: #173659;
+}
+
+#body-user[data-theme-dark] #content.app-files .sharingTab .sharing-entry,
+#body-user[data-theme-dark] #content.app-files .sharingTab .unified-share-entry {
+	background-color: #0C2542;
+	border-color: #1B3E66;
+}
+

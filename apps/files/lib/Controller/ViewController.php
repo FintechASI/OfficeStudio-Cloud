@@ -145,6 +145,7 @@ class ViewController extends Controller {
 		// Load the files we need
 		Util::addInitScript('files', 'init');
 		Util::addScript('files', 'main');
+		Util::addStyle('files', 'officestudio-files');
 
 		$user = $this->userSession->getUser();
 		$userId = $user->getUID();

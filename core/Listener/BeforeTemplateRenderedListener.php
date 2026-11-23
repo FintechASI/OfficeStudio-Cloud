@@ -33,6 +33,7 @@ class BeforeTemplateRenderedListener implements IEventListener {
 		if ($event->getResponse()->getRenderAs() === TemplateResponse::RENDER_AS_USER) {
 			// Making sure to inject just after core
 			Util::addScript('core', 'unsupported-browser-redirect');
+			Util::addStyle('core', 'officestudio-theme');
 		}
 
 		if ($event->getResponse()->getRenderAs() === TemplateResponse::RENDER_AS_PUBLIC) {
