@@ -58,8 +58,8 @@ class BackgroundService {
 	 */
 	public const SHIPPED_BACKGROUNDS = [
 		'officestudio-cloud.jpg' => [
-			'attribution' => 'OfficeStudio Cloud (OfficeStudio Cloud contributors, AGPL-3.0-or-later)',
-			'description' => 'Deep navy and blue atmospheric cloud horizon',
+			'attribution' => 'OfficeStudio Cloud Sky (Kamil Porembiński / OfficeStudio Cloud contributors, CC-BY-SA-4.0)',
+			'description' => 'Bright blue sky with sunlit white cumulus clouds',
 			'attribution_url' => 'https://github.com/FintechASI/OfficeStudio-Cloud',
 			'dark_variant' => 'officestudio-cloud-dark.jpg',
 			'background_color' => self::DEFAULT_BACKGROUND_COLOR,
