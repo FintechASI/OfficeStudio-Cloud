@@ -27,8 +27,8 @@ use OCP\User\Exceptions\UserNotFoundException;
 use RuntimeException;
 
 class BackgroundService {
-	public const DEFAULT_COLOR = '#00679e';
-	public const DEFAULT_BACKGROUND_COLOR = '#00679e';
+	public const DEFAULT_COLOR = '#0B3D6B';
+	public const DEFAULT_BACKGROUND_COLOR = '#001B3A';
 
 	/**
 	 * One of our shipped background images is used

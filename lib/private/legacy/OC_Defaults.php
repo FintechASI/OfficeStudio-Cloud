@@ -36,10 +36,10 @@ class OC_Defaults {
 		$config = Server::get(IConfig::class);
 		$serverVersion = Server::get(ServerVersion::class);
 
-		$this->defaultEntity = 'Nextcloud'; /* e.g. company name, used for footers and copyright notices */
-		$this->defaultName = 'Nextcloud'; /* short name, used when referring to the software */
-		$this->defaultTitle = 'Nextcloud'; /* can be a longer name, for titles */
-		$this->defaultBaseUrl = 'https://nextcloud.com';
+		$this->defaultEntity = 'OfficeStudio Cloud'; /* e.g. company name, used for footers and copyright notices */
+		$this->defaultName = 'OfficeStudio Cloud'; /* short name, used when referring to the software */
+		$this->defaultTitle = 'OfficeStudio Cloud'; /* can be a longer name, for titles */
+		$this->defaultBaseUrl = 'https://github.com/FintechASI/OfficeStudio-Cloud';
 		$this->defaultSyncClientUrl = $config->getSystemValue('customclient_desktop', 'https://nextcloud.com/install/#install-clients');
 		$this->defaultiOSClientUrl = $config->getSystemValue('customclient_ios', 'https://geo.itunes.apple.com/us/app/nextcloud/id1125420102?mt=8');
 		$this->defaultiTunesAppId = $config->getSystemValue('customclient_ios_appid', '1125420102');
@@ -47,10 +47,10 @@ class OC_Defaults {
 		$this->defaultFDroidClientUrl = $config->getSystemValue('customclient_fdroid', 'https://f-droid.org/packages/com.nextcloud.client/');
 		$this->defaultDocBaseUrl = 'https://docs.nextcloud.com';
 		$this->defaultDocVersion = $serverVersion->getMajorVersion(); // used to generate doc links
-		$this->defaultColorBackground = '#00679e';
-		$this->defaultColorPrimary = '#00679e';
+		$this->defaultColorBackground = '#001B3A';
+		$this->defaultColorPrimary = '#0B3D6B';
 		$this->defaultTextColorPrimary = '#ffffff';
-		$this->defaultProductName = 'Nextcloud';
+		$this->defaultProductName = 'OfficeStudio Cloud';
 
 		$themePath = OC::$SERVERROOT . '/themes/' . OC_Util::getTheme() . '/defaults.php';
 		if (file_exists($themePath)) {
@@ -313,11 +313,7 @@ class OC_Defaults {
 			return $this->theme->getLogo($useSvg);
 		}
 
-		if ($useSvg) {
-			$logo = Server::get(IURLGenerator::class)->imagePath('core', 'logo/logo.svg');
-		} else {
-			$logo = Server::get(IURLGenerator::class)->imagePath('core', 'logo/logo.png');
-		}
+		$logo = Server::get(IURLGenerator::class)->imagePath('core', 'logo/logo.png');
 		return $logo . '?v=' . hash('sha1', implode('.', Util::getVersion()));
 	}
 

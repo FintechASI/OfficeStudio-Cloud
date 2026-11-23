@@ -1,5 +1,6 @@
 {
-	"name": "Nextcloud",
+	"name": "OfficeStudio Cloud",
+	"short_name": "OfficeStudio Cloud",
 	"start_url": "../../",
 	"icons": [{
 		"src": "favicon-touch.png",

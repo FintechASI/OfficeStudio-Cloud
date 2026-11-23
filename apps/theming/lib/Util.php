@@ -232,12 +232,8 @@ class Util {
 			} catch (NotFoundException $e) {
 			}
 		}
-		// fallback to core logo
-		if ($useSvg) {
-			return \OC::$SERVERROOT . '/core/img/logo/logo.svg';
-		} else {
-			return \OC::$SERVERROOT . '/core/img/logo/logo.png';
-		}
+		// fallback to core icon
+		return \OC::$SERVERROOT . '/core/img/favicon-touch.png';
 	}
 
 	/**

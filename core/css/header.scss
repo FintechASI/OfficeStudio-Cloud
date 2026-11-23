@@ -55,7 +55,7 @@
 	// This is the first entry in the header, it represents the "home"-link
 	#nextcloud {
 		padding: 5px 0;
-		padding-inline-start: 86px; // logo width + 2 * the inset (padding)
+		padding-inline-start: 176px; // logo width + 2 * the inset (padding)
 		position: relative;
 		height: calc(100% - var(--default-grid-baseline));
 		box-sizing: border-box;
@@ -74,17 +74,16 @@
 		// the actual logo within the home-link entry
 		.logo {
 			display: inline-flex;
-			background-image: var(--image-logoheader, var(--image-logo, url('../img/logo/logo.svg')));
+			background-image: var(--image-logoheader, var(--image-logo, url('../img/logo/logo.png')));
 			background-repeat: no-repeat;
 			background-size: contain;
 			background-position: center;
-			width: 62px;
+			width: 152px;
 			position: absolute;
 			inset-inline-start: 12px;
 			top: 1px;
 			bottom: 1px;
-			// Invert if not customized and background is bright
-			filter: var(--image-logoheader-custom, var(--background-image-invert-if-bright));
+			filter: none;
 		}
 	}
 

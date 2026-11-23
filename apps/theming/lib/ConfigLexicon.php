@@ -27,7 +27,7 @@ class ConfigLexicon implements ILexicon {
 	public const TOAST_TIMEOUT = 'toast_timeout';
 	public const TOAST_TIMEOUT_DEFAULT = 7000;
 
-	/** Name of the software running on this instance (usually "Nextcloud") */
+	/** Name of the software running on this instance (usually "OfficeStudio Cloud") */
 	public const PRODUCT_NAME = 'productName';
 	/** Short name of this instance */
 	public const INSTANCE_NAME = 'name';
@@ -70,8 +70,8 @@ class ConfigLexicon implements ILexicon {
 			new Entry(
 				self::PRODUCT_NAME,
 				ValueType::STRING,
-				defaultRaw: 'Nextcloud',
-				definition: 'The name of the software running on this instance (usually "Nextcloud").',
+				defaultRaw: 'OfficeStudio Cloud',
+				definition: 'The name of the software running on this instance (usually "OfficeStudio Cloud").',
 			),
 			new Entry(
 				self::INSTANCE_NAME,

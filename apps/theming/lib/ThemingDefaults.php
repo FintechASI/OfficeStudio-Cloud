@@ -285,11 +285,7 @@ class ThemingDefaults extends \OC_Defaults {
 
 		$cacheBusterCounter = (string)$this->appConfig->getAppValueInt(ConfigLexicon::CACHE_BUSTER);
 		if (!$logo || !$logoExists) {
-			if ($useSvg) {
-				$logo = $this->urlGenerator->imagePath('core', 'logo/logo.svg');
-			} else {
-				$logo = $this->urlGenerator->imagePath('core', 'logo/logo.png');
-			}
+			$logo = $this->urlGenerator->imagePath('core', 'logo/logo.png');
 			return $logo . '?v=' . $cacheBusterCounter;
 		}
 

@@ -15,5 +15,6 @@
 <div id="version" class="section">
 	<!-- should be the last part, so Updater can follow if enabled (it has no heading therefore). -->
 	<h2><?php p($l->t('Version'));?></h2>
-	<p><strong><a href="<?php print_unescaped($theme->getBaseUrl()); ?>" rel="noreferrer noopener" target="_blank">Nextcloud Hub 26 Spring</a> (<?php p($_['version']) ?>)</strong></p>
+	<p><strong><a href="<?php print_unescaped($theme->getBaseUrl()); ?>" rel="noreferrer noopener" target="_blank"><?php p($theme->getName()); ?></a> (<?php p($_['version']) ?>)</strong></p>
+	<p><?php p($l->t('Based on Nextcloud Server (AGPL-3.0).')); ?></p>
 </div>

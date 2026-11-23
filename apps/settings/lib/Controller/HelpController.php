@@ -62,7 +62,7 @@ class HelpController extends Controller {
 
 		$knowledgebaseEmbedded = $this->config->getSystemValueBool('knowledgebase.embedded', false);
 		if (!$knowledgebaseEmbedded) {
-			$pageTitle = $this->l10n->t('Nextcloud help overview');
+			$pageTitle = $this->l10n->t('OfficeStudio Cloud help overview');
 			$urlUserDocs = $this->urlGenerator->linkToDocs('user');
 			$urlAdminDocs = $this->urlGenerator->linkToDocs('admin');
 		}

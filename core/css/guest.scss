@@ -38,11 +38,11 @@ body {
 	font-family: system-ui, -apple-system, "Segoe UI", Roboto, Oxygen-Sans, Cantarell, Ubuntu, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 	color: var(--color-background-plain-text, #ffffff);
 	text-align: center;
-	background-color: var(--color-background-plain, #0082c9);
+	background-color: var(--color-background-plain, #001B3A);
 	/* 
 	User background if logged in ('no' if removed, that way the variable is _defined_)
 	Fallback to default gradient (should not happened, the background is always defined anyway) */
-	background-image: var(--image-background, linear-gradient(40deg, #0082c9 0%, #30b6ff 100%));
+	background-image: var(--image-background, linear-gradient(135deg, #001B3A 0%, #0B3D6B 55%, #28A0E8 100%));
 	background-attachment: fixed;
 	background-size: cover;
 	background-position: center;
@@ -95,12 +95,13 @@ h3 {
 /* Global content */
 #header {
 	.logo {
-		background-image: var(--image-logo, url('../../core/img/logo/logo.svg'));
+		background-image: var(--image-logo, url('../../core/img/logo/logo.png'));
 		background-repeat: no-repeat;
 		background-size: contain;
 		background-position: center;
-		width: 175px;
-		height: 130px;
+		width: 300px;
+		max-width: 90vw;
+		height: 84px;
 		margin: 0 auto;
 		position: relative;
 		inset-inline-start: unset;

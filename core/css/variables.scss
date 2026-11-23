@@ -58,10 +58,10 @@ $color-yellow: #FC0;
 // (Works as well: color: #000; opacity: 0.57;)
 $color-text-maxcontrast: nc-lighten($color-main-text, 33%) !default;
 
-$image-logo: url('../img/logo/logo.svg?v=1') !default;
+$image-logo: url('../img/logo/logo.png?v=1') !default;
 $image-login-background: url('../img/background.png?v=2') !default;
-$image-logoheader: url('../img/logo/logo.svg?v=1') !default;
-$image-favicon: url('../img/logo/logo.svg?v=1') !default;
+$image-logoheader: url('../img/logo/logo.png?v=1') !default;
+$image-favicon: url('../img/favicon.png?v=1') !default;
 
 $color-loading-light: #ccc !default;
 $color-loading-dark: #444 !default;

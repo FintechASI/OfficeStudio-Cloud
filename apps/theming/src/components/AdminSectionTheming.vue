@@ -25,12 +25,12 @@ const ADMIN_INFO = loadState<AdminThemingInfo>('theming', 'adminThemingInfo')
 			<TextField
 				name="name"
 				:label="t('theming', 'Name')"
-				defaultValue="Nextcloud"
+				defaultValue="OfficeStudio Cloud"
 				maxlength="250" />
 			<TextField
 				name="url"
 				:label="t('theming', 'Web link')"
-				defaultValue="https://nextcloud.com"
+				defaultValue="https://github.com/FintechASI/OfficeStudio-Cloud"
 				placeholder="https://…"
 				type="url"
 				maxlength="500" />
