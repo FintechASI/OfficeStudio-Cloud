@@ -1,0 +1,151 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 400" fill="none">
+  <!--
+    - SPDX-FileCopyrightText: 2026 OfficeStudio Cloud contributors
+    - SPDX-License-Identifier: AGPL-3.0-or-later
+  -->
+  <defs>
+    <linearGradient id="osc-screen-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#054EA3"/>
+      <stop offset="48%" stop-color="#0F77D6"/>
+      <stop offset="100%" stop-color="#22A7FA"/>
+    </linearGradient>
+
+    <linearGradient id="osc-screen-glow" x1="20%" y1="0%" x2="80%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.22"/>
+      <stop offset="42%" stop-color="#ffffff" stop-opacity="0.06"/>
+      <stop offset="100%" stop-color="#002b5c" stop-opacity="0.18"/>
+    </linearGradient>
+
+    <linearGradient id="osc-bezel-grad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#1E2B3D"/>
+      <stop offset="50%" stop-color="#0D192B"/>
+      <stop offset="100%" stop-color="#07101E"/>
+    </linearGradient>
+
+    <linearGradient id="osc-aluminum" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#9BA8B8"/>
+      <stop offset="12%" stop-color="#DCE4EE"/>
+      <stop offset="50%" stop-color="#EFF4FA"/>
+      <stop offset="88%" stop-color="#C8D3E0"/>
+      <stop offset="100%" stop-color="#8C99AA"/>
+    </linearGradient>
+
+    <linearGradient id="osc-deck-edge" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#D7E0EB"/>
+      <stop offset="55%" stop-color="#A6B4C5"/>
+      <stop offset="100%" stop-color="#768496"/>
+    </linearGradient>
+
+    <linearGradient id="osc-cloud-fill" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.22"/>
+      <stop offset="100%" stop-color="#8FD4FF" stop-opacity="0.06"/>
+    </linearGradient>
+
+    <radialGradient id="osc-ground-shadow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#09386E" stop-opacity="0.34"/>
+      <stop offset="65%" stop-color="#0C4A8D" stop-opacity="0.14"/>
+      <stop offset="100%" stop-color="#0C4A8D" stop-opacity="0"/>
+    </radialGradient>
+
+    <linearGradient id="osc-reflect-fade" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.28"/>
+      <stop offset="45%" stop-color="#ffffff" stop-opacity="0.10"/>
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0"/>
+    </linearGradient>
+
+    <mask id="osc-reflect-mask">
+      <rect x="0" y="294" width="560" height="106" fill="url(#osc-reflect-fade)"/>
+    </mask>
+
+    <!-- Reusable glossy cloud symbol centered at (0,0), ~100x66 -->
+    <g id="osc-cloud-icon">
+      <path d="M-24 21H25C36.6 21 46 11.8 46 0.4C46-10 38.2-18.6 28.2-20C24.8-32.2 13.7-41 0.5-41C-14.4-41-26.8-29.8-28.4-15.2C-38.4-13.2-46-4.4-46 6.2C-46 14.4-38.8 21-30 21Z"
+            fill="url(#osc-cloud-fill)"
+            stroke="#FFFFFF"
+            stroke-width="4.4"
+            stroke-linecap="round"
+            stroke-linejoin="round"/>
+    </g>
+
+    <!-- Main device cluster so it can also be mirrored cleanly for reflection -->
+    <g id="osc-device-cluster">
+      <!-- LAPTOP (center-back) -->
+      <g id="osc-laptop">
+        <!-- Metallic outer lid rim -->
+        <rect x="114" y="34" width="332" height="222" rx="14" fill="#B8C4D3"/>
+        <rect x="116" y="36" width="328" height="218" rx="12.5" fill="url(#osc-bezel-grad)"/>
+        <!-- Subtle webcam dot -->
+        <circle cx="280" cy="43" r="2" fill="#3C506B"/>
+        <!-- Laptop display -->
+        <rect x="128" y="50" width="304" height="190" rx="5" fill="url(#osc-screen-grad)"/>
+        <rect x="128" y="50" width="304" height="190" rx="5" fill="url(#osc-screen-glow)"/>
+        <!-- Diagonal glass highlight -->
+        <path d="M128 50H295L205 240H128Z" fill="#FFFFFF" opacity="0.06"/>
+        <!-- Cloud icon on laptop screen -->
+        <use href="#osc-cloud-icon" transform="translate(280, 150) scale(1.18)"/>
+
+        <!-- Laptop base / keyboard deck -->
+        <path d="M114 254L74 282C71 284 73 288 78 288H482C487 288 489 284 486 282L446 254Z" fill="url(#osc-aluminum)"/>
+        <!-- Hinge shadow -->
+        <rect x="172" y="253" width="216" height="5" rx="2" fill="#506073"/>
+        <!-- Keyboard well hint -->
+        <path d="M132 259H428L442 272H118Z" fill="#7D8C9E" opacity="0.45"/>
+        <!-- Trackpad hint -->
+        <path d="M236 275H324L329 283H231Z" fill="#9AA8B9" opacity="0.65"/>
+        <!-- Front metallic lip -->
+        <path d="M73 286H487V291C487 294 483 296 476 296H84C77 296 73 294 73 291Z" fill="url(#osc-deck-edge)"/>
+        <!-- Thumb notch -->
+        <rect x="252" y="286" width="56" height="3.5" rx="1.75" fill="#637284"/>
+      </g>
+
+      <!-- TABLET (front-left) -->
+      <g id="osc-tablet" transform="translate(0, 0)">
+        <!-- Soft drop shadow onto laptop -->
+        <rect x="34" y="140" width="212" height="154" rx="16" fill="#061F3E" opacity="0.22"/>
+        <!-- Metallic rim + dark bezel -->
+        <rect x="28" y="134" width="212" height="154" rx="15" fill="#B6C4D4"/>
+        <rect x="30" y="136" width="208" height="150" rx="13.5" fill="url(#osc-bezel-grad)"/>
+        <!-- Tablet display -->
+        <rect x="42" y="148" width="184" height="126" rx="5" fill="url(#osc-screen-grad)"/>
+        <rect x="42" y="148" width="184" height="126" rx="5" fill="url(#osc-screen-glow)"/>
+        <path d="M42 148H154L96 274H42Z" fill="#FFFFFF" opacity="0.08"/>
+        <!-- Cloud icon on tablet -->
+        <use href="#osc-cloud-icon" transform="translate(134, 215) scale(0.76)"/>
+      </g>
+
+      <!-- SMARTPHONE (front-right) -->
+      <g id="osc-phone">
+        <!-- Soft drop shadow onto laptop -->
+        <rect x="424" y="136" width="96" height="162" rx="18" fill="#061F3E" opacity="0.24"/>
+        <!-- Metallic rim + dark bezel -->
+        <rect x="430" y="130" width="94" height="162" rx="17" fill="#B8C5D6"/>
+        <rect x="432" y="132" width="90" height="158" rx="15.5" fill="url(#osc-bezel-grad)"/>
+        <!-- Phone display -->
+        <rect x="437" y="139" width="80" height="144" rx="10" fill="url(#osc-screen-grad)"/>
+        <rect x="437" y="139" width="80" height="144" rx="10" fill="url(#osc-screen-glow)"/>
+        <!-- Dynamic island / speaker pill -->
+        <rect x="464" y="143" width="26" height="5" rx="2.5" fill="#07111F"/>
+        <!-- Diagonal sheen -->
+        <path d="M437 139H488L452 283H437Z" fill="#FFFFFF" opacity="0.08"/>
+        <!-- Cloud icon on phone -->
+        <use href="#osc-cloud-icon" transform="translate(477, 214) scale(0.46)"/>
+        <!-- Bottom home bar -->
+        <rect x="462" y="276" width="30" height="3" rx="1.5" fill="#FFFFFF" opacity="0.72"/>
+      </g>
+    </g>
+  </defs>
+
+  <!-- Soft ground contact shadows -->
+  <ellipse cx="280" cy="296" rx="210" ry="13" fill="url(#osc-ground-shadow)"/>
+  <ellipse cx="134" cy="291" rx="106" ry="9" fill="url(#osc-ground-shadow)"/>
+  <ellipse cx="477" cy="294" rx="52" ry="8" fill="url(#osc-ground-shadow)"/>
+
+  <!-- Mirrored glossy reflection underneath -->
+  <g mask="url(#osc-reflect-mask)" opacity="0.75">
+    <use href="#osc-device-cluster" transform="translate(0, 588) scale(1, -1)"/>
+  </g>
+
+  <!-- Primary crisp device cluster -->
+  <use href="#osc-device-cluster"/>
+</svg>
+
